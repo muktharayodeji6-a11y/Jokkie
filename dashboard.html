@@ -9,20 +9,53 @@
 <body>
 
 <div class="login-box">
-    <h1>JokerPanel</h1>
 
-    <h3>Welcome Admin 👋</h3>
+<h1>🚀 JokerPanel</h1>
 
-    <p>Balance: $0.00</p>
+<h3>Welcome Admin</h3>
 
-    <button onclick="location.href='new-order.html'">New Order</button>
-    <br><br>
+<hr>
 
-    <button onclick="location.href='orders.html'">Orders</button>
-    <br><br>
+<p>💰 Balance: <span id="balance">$0.00</span></p>
 
-    <button onclick="location.href='wallet.html'">Wallet</button>
+<p>📦 Active Campaigns: <span id="campaigns">0</span></p>
+
+<p>⏳ Pending Batches: <span id="batches">0</span></p>
+
+<button onclick="location.href='new-order.html'">
+➕ New Campaign
+</button>
+
+<br><br>
+
+<button onclick="location.href='orders.html'">
+📋 Campaigns
+</button>
+
+<br><br>
+
+<button onclick="location.href='wallet.html'">
+💳 Wallet
+</button>
+
+<br><br>
+
+<button onclick="logout()">
+🚪 Logout
+</button>
+
 </div>
+
+<script>
+function logout(){
+localStorage.removeItem("loggedIn");
+window.location.href="index.html";
+}
+
+if(localStorage.getItem("loggedIn")!="true"){
+window.location.href="index.html";
+}
+</script>
 
 </body>
 </html>
