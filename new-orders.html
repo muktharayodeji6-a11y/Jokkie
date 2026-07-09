@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Campaign</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
+<div class="login-box">
+
+<h2>🚀 New Campaign</h2>
+
+<select id="service">
+<option value="">Select Service</option>
+<option>Instagram Views</option>
+<option>Instagram Likes</option>
+<option>TikTok Views</option>
+<option>TikTok Likes</option>
+<option>Facebook Followers</option>
+</select>
+
+<input type="text" id="link" placeholder="Post Link">
+
+<input type="number" id="quantity" placeholder="Quantity">
+
+<select id="duration">
+<option value="1">1 Hour</option>
+<option value="3">3 Hours</option>
+<option value="6">6 Hours</option>
+<option value="12" selected>12 Hours</option>
+<option value="24">24 Hours</option>
+<option value="48">48 Hours</option>
+</select>
+
+<button onclick="createCampaign()">Create Campaign</button>
+
+<br><br>
+
+<button onclick="location.href='dashboard.html'">
+⬅ Dashboard
+</button>
+
+</div>
+
+<script>
+function createCampaign(){
+
+const campaign={
+service:document.getElementById("service").value,
+link:document.getElementById("link").value,
+quantity:Number(document.getElementById("quantity").value),
+duration:Number(document.getElementById("duration").value)
+};
+
+localStorage.setItem("campaign",JSON.stringify(campaign));
+
+alert("Campaign created successfully!");
+
+window.location.href="dashboard.html";
+
+}
+</script>
+
+</body>
+</html>
